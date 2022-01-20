@@ -1,0 +1,36 @@
+﻿@model List<SocialNetwork.ViewModels.UsersListItemViewModel>
+
+@section Styles {
+	<script type="text/javascript" src="~/js/search.js"></script>
+}
+
+@{
+	ViewData["Title"] = "Search";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Search</h2>
+<form action="GetPeople">
+		<div class="search-form">
+				<input type="text" name="name" class="form-control search-form__input" placeholder="Type in name..">
+				<button type="submit" class="btn btn-default search-form__button">
+					<span class="glyphicon glyphicon-search"> </span>
+				</button>
+		</div>
+</form>
+
+<section class="search-results">
+	<ul class="users-list">
+		@for (int i = 0; i < Model.Count; i++)
+		{ 
+			<li data-id="@Model[i].ID">
+				<a asp-controller="UserProfile" asp-action="UserProfile" asp-route-id="@Model[i].ID">
+					@await Html.PartialAsync("UsersListItem", Model[i])
+				</a>
+			</li>
+		}		
+	</ul>
+</section>
+
+
+

@@ -1,0 +1,36 @@
+﻿@model List<SocialNetwork.ViewModels.UsersListItemViewModel>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Administration Panel</h2>
+
+<h3>Users</h3>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Username</th>
+			<th>Sex</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var u in Model)
+		{
+			<tr>
+				<td>u.ID</td>
+				<td>u.Name</td>
+				<td>u.Country</td>
+				<td>
+					<a asp-action="User" class="btn btn-default">Details</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+
+</table>
+
+

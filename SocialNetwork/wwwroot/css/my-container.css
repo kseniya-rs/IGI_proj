@@ -1,0 +1,9 @@
+﻿.my-container {
+	padding: 0 15%;
+}
+
+@media only screen and (max-width: 900px) {
+	.my-container {
+		padding: 0 5%;
+	}
+}

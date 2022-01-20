@@ -1,0 +1,14 @@
+﻿@model SocialNetwork.ViewModels.UsersListItemViewModel
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="users-list__item">
+	
+	<img class="users-list__item__img" src="~/images/default_avatar.png" /> 
+	
+	<div class="users-list__item__decription">
+		<h2>@Model.Name</h2>
+		<p>@Model.Country</p>
+	</div>
+</div>

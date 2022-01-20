@@ -1,0 +1,29 @@
+﻿@model SocialNetwork.ViewModels.UserProfileViewModel
+@*@{
+	ViewData["Title"] = "User";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+@section Styles {
+	
+}
+
+<section class="user-details">
+	<figure class="user-details__figure">
+		<img class="user-details__figure__image" src="~/images/default_avatar.png" />
+	</figure>
+	<ul class="user-details__list">
+		<li class="user-details__list__item">
+			@Model.Name
+		</li>
+		<li class="user-details__list__item">
+			<i>@@@Model.Username</i>
+		</li>
+		<li class="user-details__list__item">
+			@Model.Sex
+		</li>
+		<li class="user-details__list__item">
+			@Model.Country
+		</li>
+	</ul>
+</section>
+

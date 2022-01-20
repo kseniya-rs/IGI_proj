@@ -1,0 +1,35 @@
+﻿@model SocialNetwork.ViewModels.UserProfileViewModel
+@{
+	ViewData["Title"] = "Editing Profile";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<section>
+	<h3>Profile details: </h3>
+
+
+	<form asp-action="UpdateProfile" method="post" asp-route-id="@Model.ID">
+
+		<div class="form-group">
+			<label asp-for="Name" class="control-label"></label>
+			<input asp-for="Name" class="form-control" />
+			<span asp-validation-for="Name" class="text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label asp-for="Sex" class="control-label"></label>
+			<select asp-for="Sex" asp-items="Html.GetEnumSelectList<Database.Models.UserModel.SexEnumeration>()"></select>
+
+			<span asp-validation-for="Sex" class="text-danger"></span>
+		</div>
+		<div class="form-group">
+			<label asp-for="Country" class="control-label"></label>
+			<input asp-for="Country" class="form-control" />
+			<span asp-validation-for="Country" class="text-danger"></span>
+		</div>
+		<div class="form-group">
+			<input type="submit" value="Save" class="btn btn-default" />
+		</div>
+	</form>
+</section>

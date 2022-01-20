@@ -1,0 +1,20 @@
+﻿@model List<SocialNetwork.ViewModels.FriendshipViewModel>
+@{
+	ViewData["Title"] = "";
+	int myId = (int)ViewData["MyID"];
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Friends</h2>
+<a asp-controller="Friendships" asp-action="GetPeople">Find people</a> 
+<ul class="users-list">
+	@for (int i = 0; i < Model.Count; i++)
+	{
+		<li data-friend-id="@Model[i].FriendId" data-id="@Model[i].ID">
+			<a asp-controller="UserProfile" asp-action="UserProfile" asp-route-id="@Model[i].FriendId">
+				@await Html.PartialAsync("FriendshipListItem", Model[i])
+			</a>
+		</li>
+	}
+</ul>
+

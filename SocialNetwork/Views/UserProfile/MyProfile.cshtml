@@ -1,0 +1,36 @@
+﻿@model SocialNetwork.ViewModels.UserProfileViewModel
+@{
+    ViewData["Title"] = "My profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+	<div class="flex-panel">
+		<h2>My Profile</h2>
+		<a asp-action="UpdateProfile" class="btn btn-default">Edit</a>
+	</div>
+	@await Html.PartialAsync("UserDetails", Model)
+
+	<hr />
+	<form method="post" asp-action="PostNewPost">
+		<div class="search-form">
+			<textarea type="text" name="Content" class="form-control search-form__input" placeholder="Post text..."></textarea>
+			<button type="submit" class="btn btn-default search-form__button">
+				<span class="glyphicon glyphicon-upload"> </span>
+			</button>
+		</div>
+	</form>
+
+	<hr/>
+	@foreach (var p in Model.Posts)
+	{
+		<article class="flex-panel">
+			<p>@p.Content</p>
+			<a asp-action="RemovePost" asp-route-id="@p.ID">
+				<span class="glyphicon glyphicon-remove"> </span>
+			</a>
+		</article>
+	}
+
+</section>
+

@@ -1,0 +1,15 @@
+﻿.search-form {
+	display: flex;
+	flex-direction: row;
+	justify-content:space-between;
+}
+
+.search-form__input {
+	/*border: 1px groove #808080;
+	border-radius: 1%;*/
+	flex-basis: 90%;
+}
+
+.search-form__button {
+	flex-basis: 9%;
+}

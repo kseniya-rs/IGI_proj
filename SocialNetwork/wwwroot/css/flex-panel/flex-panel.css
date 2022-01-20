@@ -1,0 +1,6 @@
+﻿.flex-panel {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	padding: 0px 5%;
+}
